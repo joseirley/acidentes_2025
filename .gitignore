@@ -1,0 +1,4 @@
+# Dados auxiliares grandes/duplicados; a página usa apenas o GeoJSON _2025_1.
+/base/rodovia.geojson
+/base/data.js
+/base/acidentes_tac_tsac_mg_2025.geojson
