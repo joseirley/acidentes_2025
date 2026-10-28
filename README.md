@@ -12,8 +12,9 @@ O endereço padrão é http://localhost:8080. Se essa porta já estiver ocupada,
 
 - Mapa Esri World Street Map, com tiles CARTO como alternativa caso o serviço principal falhe.
 - Filtros por município, intervalo de datas, dia da semana, BR, causa, classificação, fase do dia e condição meteorológica.
+- Pesquisa incremental nas listas dos filtros e seleção das opções encontradas.
 - Indicadores de acidentes, média da Taxa de Severidade, feridos leves, feridos graves, vítimas fatais e municípios.
 - Gráfico mensal do número de acidentes e gráfico dos dez municípios com maior média da Taxa de Severidade no recorte filtrado.
-- Marcadores agrupados e mapa de calor (kernel) ponderado pela Taxa de Severidade; filtros atualizam ambos.
+- Marcadores agrupados e mapa de calor (kernel) ponderado pela Taxa de Severidade, com controles independentes para ligar/desligar cada camada; filtros atualizam ambas.
 
 Os dados estão em `base/acidentes_tac_tsac_mg_2025_1.geojson`. A página carrega Leaflet, MarkerCluster e Chart.js por CDN, portanto é necessária conexão à internet para bibliotecas e tiles do mapa.
