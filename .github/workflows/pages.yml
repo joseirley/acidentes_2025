@@ -1,0 +1,39 @@
+name: Publicar painel v3 no GitHub Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'painel_v3/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Preparar arquivos do painel v3
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: painel_v3
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4
